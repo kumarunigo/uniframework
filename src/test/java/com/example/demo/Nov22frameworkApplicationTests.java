@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class UframeworkApplicationTests {
+class Nov22frameworkApplicationTests {
 
-	@Test
+	@org.junit.Test
 	void contextLoads() {
 	}
 

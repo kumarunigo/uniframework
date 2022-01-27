@@ -6,24 +6,28 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Strut txt box<br>
-	<s:textfield name="userId" label="Id" />
 
-	<br><br>
-
-	html text box <br>
-	<input type="text" name="uid"/>
-
-	Welcome <s:property value = "fName" />
-	<s:property value = "lName" /> 
+	Welcome <s:property value = "fName" /> <s:property value = "lName" /> 
 	
+	Printing list from java action program on webpage
 	<s:append var="appendIterator">
      	<s:param value="%{myList1}" /><s:param value="%{myList2}" />
 	</s:append>
-	<s:iterator value="%{#appendIterator}">  
-	  <li>
-		  <s:property />    
-	  </li>
-	</s:iterator>
+	<table border="5px">
+		<s:iterator value="%{#appendIterator}">  
+		  <tr><td>
+			  <s:property />    
+		  </td></tr>
+		</s:iterator>
+	</table>
+	<br>
+	Strut txt box
+	<br>
+	<s:textfield name="userId" label="Id" />
+	<br><br>
+	html text box 
+	<br>
+	<input type="text" name="uid"/>
+	
 </body>
 </html>
