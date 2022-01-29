@@ -12,17 +12,8 @@ import com.opensymphony.xwork2.ActionContext;
 public class LoginStrutAction implements ServletRequestAware {
 	public String pwd;
 	public String userid;
-	//  strutLogin!checkUser
+	
 	public String checkUser() {
-		
-		/*
-		 access servlet features from this action class using servlet object httpReq
-		httpReq.getParameter("userid");
-		httpReq.getSession().setAttribute("", "");
-		httpReq.setAttribute("", "");
-		httpReq.getAttribute("");
-		*/
-
 		myList1.add("apple"); 
 		myList1.add("banana"); 
 		myList1.add("mango");
@@ -31,17 +22,26 @@ public class LoginStrutAction implements ServletRequestAware {
 		myList2.add("carrot"); 
 		myList2.add("tomato");
 		
-	
+		//httpReq.setAttribute("", "");
+		//httpReq.getParameter("userid");
+		// access session using servlet object, provided by servletrequestawre interface
+		httpReq.getSession().setAttribute("login", true);
+		// access sesion using strut action context
+		((Map)ActionContext.getContext(). getSession() ).put("sessionData","session set");
+		
+		//httpReq.getServletContext().setAttribute("", "");
+		
+
 		if(userid.equals("john") && pwd.equals("john1!"))
-		{	
+		{
 			fName="johnathan";
 			lName="doe";
 			return "good";
 		}
-		else if(userid.equals("jane") && pwd.equals("jane1!!"))
-		{	
+		else if(userid.equals("jane") && pwd.equals("jane1!"))
+		{
 			fName="jane";
-			lName="joe";
+			lName="doe";
 			return "good";
 		}
 		else
