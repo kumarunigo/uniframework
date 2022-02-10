@@ -49,7 +49,13 @@
 		</action>
 		
 				
-		
+		<action name="verify" class="com.strut.ProfileAction"
+			method="verify">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>	
 		<action name="register" class="com.strut.ProfileAction"
 			method="register">
 			<result type="stream">
